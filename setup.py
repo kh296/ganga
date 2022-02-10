@@ -104,8 +104,9 @@ setup(name='ganga',
           "docker",
           "pymongo",
           "gdown",
-#          "htcondor"
       ],
+      if 'darwin' != sys.platform:
+          install_requires.append("htcondor")
       extras_require={
           'dev': ['coverage', 'pytest', 'pytest-cov', 'pytest-pylint', 'pytest-mock'],
           'profiler' : ['memory_profiler'],
