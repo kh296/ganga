@@ -93,7 +93,7 @@ install_requires=[
       "pymongo",
       "gdown",
       ]
-if sys.platform !- 'darwin':
+if sys.platform != 'darwin':
       install_requires.append("htcondor")
 
 setup(name='ganga',
