@@ -18,12 +18,12 @@ import shutil
 import time
 import datetime
 import re
-#Import htcondor but suppress warnings in case it is not set up on this system
-import warnings
-with warnings.catch_warnings():
-    warnings.simplefilter("ignore")
+# Try to import htcondor, but fail silently if not set up on this system
+try:
     import htcondor
     import classad
+except ModuleNotFoundError:
+    pass
 
 import GangaCore.Utility.logging
 import GangaCore.Utility.Virtualization
